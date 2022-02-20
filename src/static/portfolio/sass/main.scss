@@ -1,0 +1,16 @@
+@import "./utils/settings";
+@import "./utils/placehoder";
+@import "./utils/mixins";
+@import "./utils/global";
+
+@import "./components/navigation";
+@import "./components/card-project";
+
+@import "./pages/home";
+@import "./pages/project";
+@import "./pages/_detail-project.sass";
+@import "./pages/blog";
+@import "./pages/contact";
+@import "./pages/thanks";
+
+@import "./components/footer";

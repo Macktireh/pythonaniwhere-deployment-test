@@ -1,0 +1,85 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+
+{% block title %} Home {% endblock title %}
+
+
+{% block content %}
+<!-- header -->
+<header class="header-home">
+  <div class="container-content">
+
+    <h1 class="aos-item" data-aos="zoom-in" data-aos-display="500" data-aos-duration="2000" data-aos-once="false">
+      Développeur Backend Python / PowerBI & Data Engineer</h1>
+    <hr class="aos-item" data-aos="zoom-out-up" data-aos-display="3500" data-aos-duration="3000" data-aos-once="false">
+    <!-- <h2 class="aos-item" data-aos="zoom-out-up" data-aos-display="3500" data-aos-duration="3000" data-aos-once="false">
+      Macktireh Abdi Soubaneh</h2> -->
+    <div class="container-tags-competence aos-item" data-aos="zoom-out-up" data-aos-display="3500"
+      data-aos-duration="3000" data-aos-once="false">
+      <p class="p-tags-competence">
+        #Python #Django #JavaScript #Flask <br> #PostgreSQL #MySQL #MongoDB #API <br> #PowerBI #TraitementDeDonnées
+        #DataAnalysis <br> #MachineLearning #Git&Github #Docker #Lunix
+      </p>
+    </div>
+
+    <div class="img-box aos-item" data-aos="zoom-out-up" data-aos-display="3500" data-aos-duration="3000"
+      data-aos-once="false">
+      <img class="python" src="{% static 'portfolio/img/python.png' %}">
+      <img class="django" src="{% static 'portfolio/img/django.png' %}">
+      <img class="js" src="{% static 'portfolio/img/js.png' %}">
+      <img class="powerbi" src="{% static 'portfolio/img/PowerBI.png' %}">
+    </div>
+  </div>
+</header>
+
+<!-- main -->
+<main>
+  <!-- presentation -->
+  <section class="presentation">
+    <div class="container-presntation">
+      <h2>Développeur Python | Data Scientist | Expert Power BI</h2>
+      <hr>
+      <p>{% lorem 60 w %}</p>
+    </div>
+  </section>
+
+  <!-- Compétence -->
+  <section class="competence">
+    <h2>Compétence Développeur</h2>
+    <hr>
+    <div class="competence__container">
+      {% for competence in Competences.all %}
+      <div class="competence__container__box aos-item" data-aos="fade-up" data-aos-display="500"
+        data-aos-duration="3000" data-aos-once="true">
+        <img src="{{ competence.icon.url }}" alt="{{ competence.title }}">
+        <h3>{{ competence.title }}</h3>
+        <p>{{ competence.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- section quelques projets -->
+  <section class="projects">
+    <div class="projet-heading">
+      <h3>QUELQUES PROJETS</h3>
+    </div>
+    <hr>
+    <div class="projet-container">
+      {% for project in Projects.all %}
+      {% if project.status == 'published' %}
+      {% include 'portfolio/components/card-project.html' %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <a href="{% url 'projects' %}" class="btn-all-project">
+      TOUS LES PROJETS
+    </a>
+  </section>
+</main>
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

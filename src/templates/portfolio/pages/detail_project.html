@@ -1,0 +1,47 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+
+{% block title %} Project: {{ Project.title }} {% endblock title %}
+
+
+{% block content %}
+<main class="main-detail-project">
+  <div class="container-detail-project">
+    <div class="box-title">
+      <h1 class="projet-title">{{ Project.title }}</h1>
+    </div>
+    <hr>
+    <div class="published-info">
+      <p>
+        Publié le {{ Project.published_date|date:"d/m/Y" }} par {{ Project.author.first_name }} |
+        {{ Project.number_views }}
+        {% if Project.number_views > 1 %}
+        vues
+        {% else %}
+        vue
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="img-project">
+      <img src="{{ Project.image.url }}" alt="{{ Project.title }}">
+    </div>
+
+    <div class="detail-project-content">
+      {{ Project.body | safe }}
+    </div>
+  </div>
+</main>
+
+<!-- <main class="detail-product">
+  <div class"detail-product-container>
+    <h5 class="projet-title">{{ Project.title }}</h5>
+    <strong>{{ Project.published_date|date:"d/m/Y" }} | par {{ Project.author.first_name }}</strong>
+    <p class="intro">{{ Project.body|safe }}</p>
+  </div>
+</main> -->
+{% endblock %}
+
+
+{% block js %} {% endblock %}

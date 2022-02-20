@@ -1,0 +1,14 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./portfolio/sass/main.scss:./portfolio/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "purgecss": "^4.1.3"
+  }
+}
