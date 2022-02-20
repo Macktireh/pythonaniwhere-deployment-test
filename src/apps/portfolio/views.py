@@ -60,6 +60,10 @@ def contact(request):
             date_send = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
             body = f"MESSAGE :\n{message}\n\nFROM :\n{name}\n{email}\n\nDATE :\n{date_send}"
             
+            print('###############################################################################')
+            print(body)
+            print('###############################################################################')
+            
             send_mail(
                 subject_content,
                 body,
