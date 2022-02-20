@@ -68,7 +68,7 @@ def contact(request):
                 subject_content,
                 body,
                 f'{EMAIL_HOST_USER}',
-                'charmakepirlo@gmail.com'
+                ['charmakepirlo@gmail.com']
             )
             
             form.save()
