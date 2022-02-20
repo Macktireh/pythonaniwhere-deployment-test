@@ -36,7 +36,7 @@ def rename_file(instance, filename):
     
     
 class Technology(models.Model):
-    technology = models.CharField(max_length=100, verbose_name='Catégorie')
+    technology = models.CharField(_('Technology'), max_length=100)
     
     def __str__(self):
         return self.category
