@@ -67,7 +67,7 @@ def contact(request):
             send_mail(
                 subject_content,
                 body,
-                f'{EMAIL_HOST_USER}',
+                'projet.webscraping.amazonw01@gmail.com',
                 ['charmakepirlo@gmail.com']
             )
             
