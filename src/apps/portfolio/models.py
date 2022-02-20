@@ -39,10 +39,10 @@ class Technology(models.Model):
     technology = models.CharField(_('Technology'), max_length=100)
     
     def __str__(self):
-        return self.category
+        return self.technology
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.category)
+        self.slug = slugify(self.technology)
         super().save(*args, **kwargs)
 
 
